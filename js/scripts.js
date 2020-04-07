@@ -10,7 +10,7 @@ AddressBook.prototype.addContact = function(contact) {
 }
 
 AddressBook.prototype.assignId = function() {
-  this.currentId += 1;
+  this.currentId = this.currentId + 1;
   return this.currentId;
 }
 
@@ -25,10 +25,10 @@ AddressBook.prototype.findContact = function(id) {
   return false;
 }
 
-AddressBook.prototype.deleteContact = function(id) {
-  for (var i=0; i< this.contacts.length; i++) {
+AddressBook.prototype.deleteContact = function (id) {
+  for (var i = 0; i < this.contacts.length; i++) {
     if (this.contacts[i]) {
-      if (this.contacts[i].id == id) {
+      if (this.contacts[i].id === id) {
         delete this.contacts[i];
         return true;
       }
