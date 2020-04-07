@@ -16,7 +16,7 @@ AddressBook.prototype.assignId = function() {
 
 AddressBook.prototype.findContact = function(id) {
   for (var i = 0; i < this.contacts.length; i++) {
-    if (this.contacts[i].id === id) {
+    if (this.contacts[i].id == id) {
       return this.contacts[i];
       }
     };
@@ -65,7 +65,7 @@ function showContact(contactId) {
   $(".phone-number").html(contact.phoneNumber);
   var buttons = $("#buttons");
   buttons.empty();
-  buttons.append("<button class='deleteButton' id=" + + contact.id + ">Delete</button>")
+  buttons.append("<button class='deleteButton' id="+ contact.id + ">Delete</button>")
 }
 
 function attachContactListeners() {
@@ -84,8 +84,11 @@ $(document).ready(function() {
   $("form#new-contact").submit(function(event) {
     event.preventDefault();
     var inputtedFirstName = $("input#new-first-name").val();
+    // console.log(inputtedFirstName);
     var inputtedLastName = $("input#new-last-name").val();
-    var inputtedPhoneNumber = $('input#new-phone-number').val();
+    // console.log(inputtedLastName);
+    var inputtedPhoneNumber = $("input#new-phone-number").val();
+    // console.log(inputtedPhoneNumber);
 
     $("input#new-first-name").val("");
     $("input#new-last-name").val("");
